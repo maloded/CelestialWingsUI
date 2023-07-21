@@ -1,1 +1,1 @@
-# CelestialWingsUI
+# CelestialWingsUI submodule
