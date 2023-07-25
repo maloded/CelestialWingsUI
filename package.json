@@ -4,7 +4,25 @@
   "description": "UI for CelestialWings app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --env port=3000",
+    "build:prod": "webpack --env mode=production",
+    "build:dev": "webpack --env mode=development",
+    "lint:fixAll": "npm run lint:ts:fix && npm run lint:scss:fix && npm run lint:prettier:fix",
+    "lint:ts": "eslint \"**/*.{ts,tsx}\"",
+    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "lint:scss": "stylelint \"**/*.scss\"",
+    "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
+    "lint:prettier": "prettier --check \"**/*.*\"",
+    "lint:prettier:fix": "prettier --write \"**/*.*\"",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:ui": "loki test",
+    "test:ui:ok": "loki approve",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static --chromeFlags=\"--headless --no-sandbox\"",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "storybook": "start-storybook -p 6006 -c ./config/storybook",
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "repository": {
     "type": "git",
@@ -17,8 +35,12 @@
   },
   "homepage": "https://github.com/maloded/CelestialWingsUI#readme",
   "dependencies": {
+    "i18next": "^23.2.11",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-http-backend": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^13.0.2",
     "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
