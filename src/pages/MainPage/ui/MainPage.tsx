@@ -1,5 +1,4 @@
-import React from 'react'
-import { Aircrafts } from 'components/Aircrafts';
+import { Aircrafts } from "components/Aircrafts";
 
 const MainPage = () => {
   return (
