@@ -1,3 +1,3 @@
-export { buildSvgLoader } from './builsSvgLoader';
+export { buildSvgLoader } from "./builsSvgLoader";
 
-export { buildCssLoader } from './buildCssLoader';
+export { buildCssLoader } from "./buildCssLoader";
