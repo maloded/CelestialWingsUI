@@ -4,7 +4,9 @@ import { Navbar } from './widgets/Navbar';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames';
+import { Sidebar } from './widgets/Sidebar';
 import './styles/index.scss';
+
 
 export const App = () => {
   const { theme } = useTheme();
@@ -22,7 +24,10 @@ export const App = () => {
     // </div>
     <div className={ classNames('app', {}, [theme]) }>
       <Navbar />
-      <AppRouter />
+      <div className='content-page'>
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };
