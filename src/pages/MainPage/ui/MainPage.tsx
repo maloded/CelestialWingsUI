@@ -1,12 +1,15 @@
 import { Aircrafts } from "components/Aircrafts";
+import { useTranslation } from "react-i18next";
 
 const MainPage = () => {
+  const { t } = useTranslation("main");
+  
   return (
     <div>
-      <div>MainPage</div>
+      <div>{ t("Home page") }</div>
       <Aircrafts />
     </div>
-  )
-}
+  );
+};
 
 export default MainPage;
