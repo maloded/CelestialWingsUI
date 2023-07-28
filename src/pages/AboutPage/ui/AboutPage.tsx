@@ -1,12 +1,12 @@
-import { Counter } from "components/Counter";
-import { useTranslation } from "react-i18next";
+import { Counter } from 'components/Counter';
+import { useTranslation } from 'react-i18next';
 
 const AboutPage = () => {
-  const { t } = useTranslation("about");
+  const { t } = useTranslation('about');
 
   return (
     <div>
-      <div>{ t("About") }</div>
+      <div>{ t('About') }</div>
       <Counter />
     </div>
   );

@@ -1,19 +1,28 @@
-import { ChangeEvent, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames";
-import { Select, ThemeSelect } from "shared/ui/Select";
-import css from "./LangSwitcher.module.scss";
+import { ChangeEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames';
+import { Select, ThemeSelect } from 'shared/ui/Select';
+import css from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
   className?: string;
 };
 
-const options = [{ value: "en", children: "🇺🇸" }, { value: "ua", children: "🇺🇦" },];
+const options = [
+  {
+    value: 'en', 
+    children: '🇺🇸' 
+  }, 
+  { 
+    value: 'ua', 
+    children: '🇺🇦' 
+  },
+];
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState('en');
 
   const changeLocale = (e: ChangeEvent<HTMLSelectElement>) => {
     const lang = e.target.value;
@@ -26,7 +35,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       <Select
         onChange={ changeLocale }
         defaultValue={ language }
-        className={ classNames(css.langSwitcher) }
+        className={ classNames(css.langSwitcher, {}, [className]) }
         theme={ ThemeSelect.CLEAR }
         options={ options }
       />

@@ -1,6 +1,6 @@
-import { SelectHTMLAttributes, FC } from "react";
-import { classNames } from "shared/lib/classNames";
-import css from "./Select.module.scss";
+import { SelectHTMLAttributes, FC } from 'react';
+import { classNames } from 'shared/lib/classNames';
+import css from './Select.module.scss';
 
 export enum ThemeSelect {
   CLEAR = 'clear',
@@ -16,7 +16,10 @@ export const Select: FC<SelectProps> = (props) => {
   const { className, options, theme, ...rest } = props;
 
   return (
-    <select className={ classNames(css.select, {}, [className, css[theme]]) } { ...rest }>
+    <select 
+      className={ classNames(css.select, {}, [className, css[theme]]) }
+      { ...rest }
+    >
       {options.map((option) => (
         <option key={option.value} {...option} />
       ))}

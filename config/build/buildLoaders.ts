@@ -1,6 +1,6 @@
-import webpack from "webpack";
-import { buildCssLoader, buildSvgLoader } from "./loaders";
-import { BuildOptions } from "./types/config";
+import webpack from 'webpack';
+import { buildCssLoader, buildSvgLoader } from './loaders';
+import { BuildOptions } from './types/config';
 
 export const buildLoaders = ({
   isDev,
@@ -11,7 +11,7 @@ export const buildLoaders = ({
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
-        loader: "file-loader",
+        loader: 'file-loader',
       },
     ],
   };
@@ -22,16 +22,16 @@ export const buildLoaders = ({
     test: /\.(js|jsx|tsx)$/,
     exclude: /(node_modules|bower_components)/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
-        presets: ["@babel/preset-env"],
+        presets: ['@babel/preset-env'],
       },
     },
   };
 
   const tsLoader = {
     test: /\.tsx?$/,
-    use: "ts-loader",
+    use: 'ts-loader',
     exclude: /node_modules/,
   };
 
