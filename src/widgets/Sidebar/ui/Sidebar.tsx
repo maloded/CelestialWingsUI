@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { Button, ThemeButton } from 'shared/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary';
+import MenuIcon from 'shared/assets/icons/open-menu.svg';
 import css from './Sidebar.module.scss';
 
 
@@ -13,7 +12,6 @@ interface SideBarProps {
 
 export const Sidebar = ({ className }: SideBarProps) => {
   const [collapsed, setCollapsed] = useState(false);
-  const { t } = useTranslation();
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -28,13 +26,17 @@ export const Sidebar = ({ className }: SideBarProps) => {
         [className]
       ) }
     >
-      <button data-testid={'sidebar-toggle'} onClick={ onToggle }>
-        { t('Toggle') }
-      </button>
       <div className={css.switchers}>
-        <ThemeSwitcher />
         <LangSwitcher />
-        <BugButton />
+        {/* <BugButton /> */}
+        <Button
+          data-testid={'sidebar-toggle'}
+          theme={ThemeButton.CLEAR}
+          className={css.toggle}
+          onClick={onToggle}
+        >
+          <MenuIcon width={'24px'} />
+        </Button>
       </div>
     </div>
   );

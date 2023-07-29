@@ -1,11 +1,12 @@
-// import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { Suspense } from 'react';
 import { Navbar } from '../widgets/Navbar';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames';
 import { Sidebar } from '../widgets/Sidebar';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import './styles/index.scss';
+
 
 
 export const App = () => {
@@ -18,6 +19,7 @@ export const App = () => {
         <div className='content-page'>
           <Sidebar />
           <AppRouter />
+          <ThemeSwitcher />
         </div>
       </Suspense>
     </div>
