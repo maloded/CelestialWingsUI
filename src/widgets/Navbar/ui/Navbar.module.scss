@@ -8,13 +8,3 @@
   background: var(--menu-color);
   box-shadow: 0 0 5px 0 rgb(0 0 0 / 5%);
 }
-
-.links {
-  margin-left: auto;
-  display: flex;
-  gap: 15px;
-
-  & > * {
-    text-decoration: none;
-  }
-}

@@ -30,6 +30,6 @@
 		}
 	},
 	"include": [
-		"."
-	]
+		".",
+		 ".storybook", "config/storybook"	]
 }

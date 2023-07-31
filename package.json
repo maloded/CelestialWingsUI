@@ -20,9 +20,7 @@
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static --chromeFlags=\"--headless --no-sandbox\"",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
-    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook"
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "repository": {
     "type": "git",
@@ -49,12 +47,6 @@
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "@storybook/addon-actions": "^7.1.0",
-    "@storybook/addon-essentials": "^7.1.0",
-    "@storybook/addon-interactions": "^7.1.0",
-    "@storybook/addon-links": "^7.1.0",
-    "@storybook/react": "^7.1.1",
-    "@storybook/testing-library": "^0.2.0",
     "@svgr/webpack": "^8.0.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
