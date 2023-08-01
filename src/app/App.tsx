@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames';
 import { Sidebar } from '../widgets/Sidebar';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import './styles/index.scss';
+import { useAppSelector } from 'store/hooks/redux';
 
 
 
